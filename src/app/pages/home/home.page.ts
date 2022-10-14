@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,13 @@ import { MenuController } from '@ionic/angular';
 })
 export class HomePage {
 
-  username: string;
+  username: string='';
 
   constructor(
     private router: Router,
     private activatedRouter: ActivatedRoute,
     private menu: MenuController,
+    private storage:Storage,
   ) {
     this.activatedRouter.queryParams.subscribe(params => {
 
@@ -29,6 +31,11 @@ export class HomePage {
   }
 
   ngOnInit() {
+    this.vernombre();
   }
 
+  async vernombre()
+  {
+    this.username=await this.storage.get('sesion');
+  }
 }
