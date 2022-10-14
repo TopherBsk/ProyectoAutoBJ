@@ -40,14 +40,6 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
-  {
-    path: 'home-trabajador',
-    loadChildren: () => import('./pages/home-trabajador/home-trabajador.module').then( m => m.HomeTrabajadorPageModule)
-  },
-  {
-    path: 'solicitud',
-    loadChildren: () => import('./pages/solicitud/solicitud.module').then( m => m.SolicitudPageModule)
-  },
 ];
 
 @NgModule({
