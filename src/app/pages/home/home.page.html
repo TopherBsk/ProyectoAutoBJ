@@ -1,54 +1,53 @@
-    <ion-header [translucent]="true">
-      <ion-toolbar color="primary">
-        <ion-text slot="end">
-          <ion-tab-button tab="cuenta" routerLink="/cuenta" > 
-            <h5>{{username}}</h5>
-          </ion-tab-button>
-          
-        </ion-text>
-        <ion-icon slot="end" name="happy-outline" class="ion-padding" size="large"></ion-icon>
-    
-      </ion-toolbar>
-    </ion-header>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-text slot="end">
+      <ion-tab-button tab="cuenta" routerLink="/cuenta">
+        <h5>{{username}}</h5>
+      </ion-tab-button>
+
+    </ion-text>
+    <ion-icon slot="end" name="happy-outline" class="ion-padding" size="large"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
 
 
 
 <ion-content>
   <ion-text color="primary" class="ion-text-center">
-    
+
     <h5 class="animate__animated animate__backInLeft">Bienvenido {{username}}</h5>
   </ion-text>
 
 
-  
+
   <ion-text color="primary" class="ion-text-center">
     <h3 class="animate__animated animate__backInRight">Planea tu viaje!</h3>
   </ion-text>
 
-  
+  <ion-card>
     <ion-tab-button tab="home-trabajador" routerLink="/home-trabajador">
-        <ion-card>
-          <img src="assets/need_for_speed_heat_5.png"/>
-          <ion-card-header>
-            <ion-card-subtitle>Destino: Tu casa</ion-card-subtitle>
-            <ion-card-title>Auto del Need For Speed</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Wena compare, lo llevo pa su casa con buena música y una monster white
-          </ion-card-content>
-        </ion-card>
-    </ion-tab-button>
-  
+      <img src="assets/need_for_speed_heat_5.png" />
+    <ion-card-header>
+      <ion-card-subtitle>Destino: Tu casa</ion-card-subtitle>
+      <ion-card-title>Auto del Need For Speed</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Wena compare, lo llevo pa su casa con buena música y una monster white
+    </ion-card-content>
+  </ion-tab-button>
+  </ion-card>
+
 
   <ion-card>
-          <img src="assets/forzahorizon.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Destino: Hogar dulce hogar</ion-card-subtitle>
-            <ion-card-title>Auto del Forza Horizon</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Hola socio buenas tardes, si desea lo llevo a su hogar acompañado de un buen aperitivo
-          </ion-card-content>
+    <img src="assets/forzahorizon.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Destino: Hogar dulce hogar</ion-card-subtitle>
+      <ion-card-title>Auto del Forza Horizon</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Hola socio buenas tardes, si desea lo llevo a su hogar acompañado de un buen aperitivo
+    </ion-card-content>
   </ion-card>
 
 </ion-content>
@@ -58,7 +57,7 @@
 
 
 <!-- botones de abajo -->
-<ion-tabs >
+<ion-tabs>
   <ion-tab-bar slot="bottom" color="dark">
     <ion-tab-button tab="speakers" routerLink="/home">
       <ion-icon name="person-circle"></ion-icon>
