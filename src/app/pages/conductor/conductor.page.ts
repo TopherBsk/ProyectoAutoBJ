@@ -45,7 +45,7 @@ export class ConductorPage {
     if (existe == null) {
       await this.storage.set(this.viajes.patente, this.viajes);
       console.log("Viaje fue creado");
-      this.router.navigate(['/viajes']);
+      this.router.navigate(['/viaje']);
     }
     else {
       console.log("Primero complete su viaje")
