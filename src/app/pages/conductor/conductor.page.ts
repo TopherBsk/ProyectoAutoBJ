@@ -13,6 +13,7 @@ import { Viajes } from '../../interfaces/viajes';
 export class ConductorPage {
 
   username: string;
+  
   viajes:Viajes={
   precio: 0,
   ubicacion: '',
