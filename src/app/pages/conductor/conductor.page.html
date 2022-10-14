@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-text slot="end">
+      <ion-tab-button tab="home" routerLink="/cuenta">
+        <h3>{{username}}</h3>
+      </ion-tab-button>
+
+    </ion-text>
+    <ion-icon slot="end" name="happy-outline" class="ion-padding" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-text color="primary" class="ion-text-center">
+      <h3 class="animate__animated animate__backInLeft">Crea un viaje</h3>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Pon un precio</ion-label>
+      <ion-input type="number" placeholder="">$</ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>¿Dónde te encuentras?</ion-label>
+        <ion-select placeholder="Comuna" okText="Selecciona" cancelText="Cancelar">
+          <ion-select-option value="Concepcion">Concepcion</ion-select-option>
+          <ion-select-option value="Hualpen">Hualpen</ion-select-option>
+          <ion-select-option value="Talcahuano">Talcahuano</ion-select-option>
+          <ion-select-option value="Chiguayante">Chiguayante</ion-select-option>
+          <ion-select-option value="San Pedro">San Pedro</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>¿Dónde quieres ir?</ion-label>
+        <ion-select placeholder="Comuna" okText="Selecciona" cancelText="Cancelar">
+          <ion-select-option value="Concepcion">Concepcion</ion-select-option>
+          <ion-select-option value="Hualpen">Hualpen</ion-select-option>
+          <ion-select-option value="Talcahuano">Talcahuano</ion-select-option>
+          <ion-select-option value="Chiguayante">Chiguayante</ion-select-option>
+          <ion-select-option value="San Pedro">San Pedro</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="dark">
+      <!-- 
+botones de abajo -->
+
+
+      <ion-tab-button tab="speakers" routerLink="/home">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="map" routerLink="/viaje">
+        <ion-icon name="map"></ion-icon>
+        <ion-label>Viaje</ion-label>
+      </ion-tab-button>
+
+
+      <ion-tab-button tab="schedule" routerLink="/conductor">
+        <ion-icon name="car-sport-outline"></ion-icon>
+        <ion-label>Conductor</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

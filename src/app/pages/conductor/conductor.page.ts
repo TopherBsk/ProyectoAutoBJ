@@ -5,11 +5,11 @@ import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.page.html',
-  styleUrls: ['./chat.page.scss'],
+  selector: 'app-conductor',
+  templateUrl: './conductor.page.html',
+  styleUrls: ['./conductor.page.scss'],
 })
-export class ChatPage {
+export class ConductorPage {
 
   username: string;
   constructor(private router: Router,

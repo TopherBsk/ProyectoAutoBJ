@@ -9,7 +9,9 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./viaje.page.scss'],
 })
 export class ViajePage {
+
   username: string;
+  
   constructor(private router: Router,
     private activatedRouter: ActivatedRoute,
     private menu: MenuController,

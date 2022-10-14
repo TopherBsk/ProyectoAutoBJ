@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-text slot="end">
       <ion-tab-button tab="home" routerLink="/cuenta" > 
-        <h5>{{username}}</h5>
+        <h3>{{username}}</h3>
       </ion-tab-button>
       
     </ion-text>
@@ -11,37 +11,29 @@
 </ion-header>
 
 <ion-content>
-    <ion-text color="primary" class="ion-text-center">
-        <h3 class="animate__animated animate__backInLeft">A Donde quieres ir?</h3>
-    </ion-text>
 
-<ion-card  class="ion-padding">
+<ion-card>
   <ion-item>
-    <ion-label position="floating">¿Donde te encuentras?</ion-label>
-    <ion-input  required type="text" ></ion-input>
+    <ion-icon name="person-sharp"></ion-icon>
+    <ion-label></ion-label>
+    <ion-input value="Will Smith"></ion-input>
   </ion-item>
-
-    <ion-list>
-      <ion-item>
-        <ion-select interface="popover" placeholder="¿Donde quieres ir?">
-          <ion-select-option value="apples">Concepcion</ion-select-option>
-          <ion-select-option value="oranges">Hualpen</ion-select-option>
-          <ion-select-option value="bananas">Talcahuano</ion-select-option>
-          <ion-select-option value="bananas">Chiguayante</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-
-    <ion-item>
-      <ion-label position="floating">Precio</ion-label>
-      <ion-input required type="number">$ </ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-icon name="calendar-outline"></ion-icon>
+    <ion-label></ion-label>
+    <ion-input type="bday" value="25/09/1968"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="mail-outline"></ion-icon>
+    <ion-label></ion-label>
+    <ion-input type="email" value="willsmith@gmail.com"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="business-outline"></ion-icon>
+    <ion-label></ion-label>
+    <ion-input value="Concepción"></ion-input>
+  </ion-item>
 </ion-card>
-
-</ion-content>
-
-
-
 
 
 <ion-tabs>
@@ -51,7 +43,7 @@ botones de abajo -->
 
 
     <ion-tab-button tab="speakers" routerLink="/home">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="home"></ion-icon>
       <ion-label>Inicio</ion-label>
     </ion-tab-button>
 
@@ -61,11 +53,16 @@ botones de abajo -->
     </ion-tab-button>
 
 
-    <ion-tab-button tab="schedule" routerLink="/chat">
-      <ion-icon name="paper-plane-outline"></ion-icon>
-      <ion-label>Chat</ion-label>
-      <ion-badge>6</ion-badge>
+    <ion-tab-button tab="schedule" routerLink="/conductor">
+      <ion-icon name="car-sport-outline"></ion-icon>
+      <ion-label>Conductor</ion-label>
     </ion-tab-button>
 
   </ion-tab-bar>
 </ion-tabs>
+</ion-content>
+
+
+
+
+

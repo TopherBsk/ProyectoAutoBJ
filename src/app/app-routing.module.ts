@@ -33,8 +33,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/viaje/viaje.module').then( m => m.ViajePageModule)
   },
   {
-    path: 'chat',
-    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+    path: 'conductor',
+    loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule)
   },
   {
     path: 'registro',

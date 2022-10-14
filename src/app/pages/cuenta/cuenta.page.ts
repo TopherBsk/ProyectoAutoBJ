@@ -12,7 +12,6 @@ export class CuentaPage  {
 
   username: string;
   
-
   constructor(private router: Router,
     private activatedRouter: ActivatedRoute,
     private menu: MenuController,
