@@ -48,10 +48,6 @@ const routes: Routes = [
     path: 'solicitud',
     loadChildren: () => import('./pages/solicitud/solicitud.module').then( m => m.SolicitudPageModule)
   },
-  {
-    path: 'chat-cliente',
-    loadChildren: () => import('./pages/chat-cliente/chat-cliente.module').then( m => m.ChatClientePageModule)
-  },
 ];
 
 @NgModule({
