@@ -14,7 +14,7 @@ export class ConductorPage {
 
   username: string;
   viajes:Viajes={
-  precio: 0,
+  precio: null,
   ubicacion: '',
   destino:'',
   patente: '',
@@ -43,11 +43,11 @@ export class ConductorPage {
 
     if (existe == null) {
       await this.storage.set(this.viajes.patente, this.viajes);
-      console.log("Usuario fue creado");
-      this.router.navigate(['/loginpage']);
+      console.log("Viaje fue creado");
+      this.router.navigate(['/viajes']);
     }
     else {
-      console.log("Ya existe!")
+      console.log("Primero complete su viaje")
     }
   }
 }
