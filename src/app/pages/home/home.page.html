@@ -2,7 +2,7 @@
       <ion-toolbar color="primary">
         <ion-text slot="end">
           <ion-tab-button tab="cuenta" routerLink="/cuenta" > 
-            <h5>{{username}}</h5>
+            <h5>{{username || 'Alejandro'}}</h5>
           </ion-tab-button>
           
         </ion-text>
@@ -22,7 +22,7 @@
 
   
   <ion-text color="primary" class="ion-text-center">
-    <h3 class="animate__animated animate__backInRight">Planea tu viaje!</h3>
+    <h3 class="animate__animated animate__backInRight">Planea tu viaje</h3>
   </ion-text>
 
   <ion-card>

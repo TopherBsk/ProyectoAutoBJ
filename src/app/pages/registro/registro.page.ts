@@ -13,6 +13,7 @@ export class RegistroPage implements OnInit {
   usuario:Usuario={
     username:'',
     password:''
+
   };
 
   constructor(private storage:Storage,private router:Router) { }
