@@ -14,7 +14,7 @@ export class ConductorPage {
 
   username: string;
   viajes:Viajes={
-  precio: null,
+  precio: 0,
   ubicacion: '',
   destino:'',
   patente: '',
