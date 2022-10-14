@@ -1,4 +1,3 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-text slot="end">
@@ -12,24 +11,18 @@
   </ion-toolbar>
 </ion-header>
 
-
-
-
 <ion-content>
   <ion-text color="primary" class="ion-text-center">
 
     <h5 class="animate__animated animate__backInLeft">Bienvenido {{username}}</h5>
   </ion-text>
 
-
-
   <ion-text color="primary" class="ion-text-center">
     <h3 class="animate__animated animate__backInRight">Planea tu viaje</h3>
   </ion-text>
 
   <ion-card>
-    <ion-tab-button tab="home-trabajador" routerLink="/home-trabajador">
-      <img src="assets/need_for_speed_heat_5.png" />
+    <img src="assets/need_for_speed_heat_5.png" />
     <ion-card-header>
       <ion-card-subtitle>Destino: Tu casa</ion-card-subtitle>
       <ion-card-title>Auto del Need For Speed</ion-card-title>
@@ -37,9 +30,8 @@
     <ion-card-content>
       Wena compare, lo llevo pa su casa con buena música y una monster white
     </ion-card-content>
-  </ion-tab-button>
   </ion-card>
-
+  <ion-button class="ion-text-center" routerLink="/home-trabajador">Crear Viaje</ion-button>
 
   <ion-card>
     <img src="assets/forzahorizon.jpg" />
@@ -53,9 +45,6 @@
   </ion-card>
 
 </ion-content>
-
-
-
 
 
 <!-- botones de abajo -->
