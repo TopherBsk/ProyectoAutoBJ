@@ -21,19 +21,17 @@
     <h3 class="animate__animated animate__backInRight">Planea tu viaje</h3>
   </ion-text>
 
-  <ion-card>
-    <img src="assets/need_for_speed_heat_5.png" />
-    <ion-card-header>
-      <ion-card-subtitle>Destino: Tu casa</ion-card-subtitle>
-      <ion-card-title>Auto del Need For Speed</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Wena compare, lo llevo pa su casa con buena música y una monster white
-    </ion-card-content>
-  </ion-card>
-  <ion-button class="ion-text-center" routerLink="/home-trabajador">Crear Viaje</ion-button>
+  <ion-item>
+    <ion-text>
+      <img src="assets/need_for_speed_heat_5.png" />
+      <h2>Destino: Tu casa</h2>
+      <h3>Auto del Need For Speed </h3>
+      <h5>Wena compare, lo llevo pa su casa con buena música y una monster white</h5>
+    </ion-text>
+    <ion-button [routerLink]="['/cuenta']">Cuenta qla</ion-button>
+  </ion-item>
 
-  <ion-card>
+  <ion-card routerLink="/cuenta">
     <img src="assets/forzahorizon.jpg" />
     <ion-card-header>
       <ion-card-subtitle>Destino: Hogar dulce hogar</ion-card-subtitle>
@@ -43,7 +41,6 @@
       Hola socio buenas tardes, si desea lo llevo a su hogar acompañado de un buen aperitivo
     </ion-card-content>
   </ion-card>
-
 </ion-content>
 
 
