@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-text slot="end">
+      <ion-tab-button tab="cuenta" routerLink="/cuenta" > 
+        <p>{{username || 'Anónimo'}}</p>
+      </ion-tab-button>
+      
+    </ion-text>
+    <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content class="ion-padding">
+<ion-text color="primary" class="ion-text-center">
+
+<h1 class="animate__animated animate__backInLeft">Bienvenido {{username || 'Anónimo'}}</h1>
+</ion-text>
+
+
+<ion-text color="primary" class="ion-text-center">
+<h1 class="animate__animated animate__backInRight">Historial De Viaje </h1>
+</ion-text>
+<ion-list>
+
+</ion-list>
+</ion-content>
+
+
+<!-- botones de abajo -->
+<ion-tabs >
+<ion-tab-bar slot="bottom" color="dark">
+<ion-tab-button tab="speakers" routerLink="/home_trabajador">
+  <ion-icon name="notifications-circle-outline"></ion-icon>
+  <ion-label>Inicio</ion-label>
+</ion-tab-button>
+
+<ion-tab-button tab="soli" routerLink="/solicitud">
+  <ion-icon name="solicitud"></ion-icon>
+  <ion-label>Solicitudes</ion-label>
+</ion-tab-button>
+
+
+<ion-tab-button tab="schedule" routerLink="/chat_cliente">
+  <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+  <ion-label>chat</ion-label>
+</ion-tab-button>
+
+</ion-tab-bar>
+</ion-tabs>

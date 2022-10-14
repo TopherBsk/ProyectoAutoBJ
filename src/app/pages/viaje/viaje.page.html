@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-text slot="end">
+      <ion-tab-button tab="home" routerLink="/cuenta" > 
+        <h5>{{username || 'Alejandro'}}</h5>
+      </ion-tab-button>
+      
+    </ion-text>
+    <ion-icon slot="end" name="happy-outline" class="ion-padding" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-text color="primary" class="ion-text-center">
+        <h3 class="animate__animated animate__backInLeft">Aún no has abordado un vehículo!</h3>
+    </ion-text>
+<ion-list *ngFor="let item of [1]" >
+  <ion-card  routerLink="/home">
+    <ion-card-header>
+      <ion-card-title>"Aqui iniciaria tu viaje"</ion-card-title>
+    </ion-card-header>
+    <ion-img src="/assets/mapa.png"></ion-img>
+    <ion-card-content>
+      Para mayor seguridad y confianza puedes ver el recorrido de tu viaje hasta tu destino!
+    </ion-card-content>
+  </ion-card>
+</ion-list>
+
+</ion-content>
+
+
+
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="dark">
+
+
+
+<!-- 
+botones de abajo -->
+
+
+    <ion-tab-button tab="speakers" routerLink="/home">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map" routerLink="/viaje">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>Viaje</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="schedule" routerLink="/chat">
+      <ion-icon name="paper-plane-outline"></ion-icon>
+      <ion-label>Chat</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
