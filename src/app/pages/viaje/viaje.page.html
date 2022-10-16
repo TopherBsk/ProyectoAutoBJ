@@ -11,11 +11,18 @@
 </ion-header>
 
 <ion-content>
+<!--cargar pagina------------------------------------------------------------------------------>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   
+  <!-------Buscador de pagina------------------------------------------------------------------------------>
+
   <ion-searchbar></ion-searchbar>
+
+
+
+  <!-------Viajes disponibles------------------------------------------------------------------------------>
 
 <ion-card>
   <ion-item>
@@ -45,11 +52,11 @@
 </ion-card>
 
 
+
+<!---------------------- botones de abajo ---------------------------->
+
 <ion-tabs>
   <ion-tab-bar slot="bottom" color="dark">
-<!-- 
-botones de abajo -->
-
 
     <ion-tab-button tab="speakers" routerLink="/home">
       <ion-icon name="home"></ion-icon>

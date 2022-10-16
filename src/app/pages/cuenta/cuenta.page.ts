@@ -17,11 +17,23 @@ export class CuentaPage  {
     private menu: MenuController,
     private storage:Storage,) {}
 
+
+    cerrarSesion(){
+      this.cerrar();
+      this.router.navigate(['/loginpage']);
+  
+    }
   
   ngOnInit() {
     this.vernombre();
   }
 
+  async cerrar()
+  {
+    await this.storage.set('sesion',null);
+
+
+  }
   async vernombre()
   {
     this.username=await this.storage.get('sesion');
