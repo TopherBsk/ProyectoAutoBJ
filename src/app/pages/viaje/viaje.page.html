@@ -11,36 +11,52 @@
 </ion-header>
 
 <ion-content>
+<!--cargar pagina------------------------------------------------------------------------------>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <!-------Buscador de pagina------------------------------------------------------------------------------>
+
+  <ion-searchbar></ion-searchbar>
+
+
+
+  <!-------Viajes disponibles------------------------------------------------------------------------------>
 
 <ion-card>
   <ion-item>
-    <ion-icon name="person-sharp"></ion-icon>
-    <ion-label></ion-label>
-    <ion-input value="Will Smith"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="calendar-outline"></ion-icon>
-    <ion-label></ion-label>
-    <ion-input type="bday" value="25/09/1968"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="mail-outline"></ion-icon>
-    <ion-label></ion-label>
-    <ion-input type="email" value="willsmith@gmail.com"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="business-outline"></ion-icon>
-    <ion-label></ion-label>
-    <ion-input value="Concepción"></ion-input>
-  </ion-item>
+    <ion-thumbnail slot="start">
+      <img alt="Silhouette of mountains" src="assets/will.jpg" />
+    </ion-thumbnail>
+      <ion-label>Maria Antonieta</ion-label>
+      <ion-label>Viaja:</ion-label>
+      <ion-label>Precio:</ion-label>
+      <ion-button expand="block" fill="clear" shape="round">
+        Viajar
+      </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img alt="Silhouette of mountains" src="assets/will.jpg" />
+      </ion-thumbnail>
+        <ion-label>Matias Reuque</ion-label>
+        <ion-label>Viaja:</ion-label>
+        <ion-label>precio:</ion-label>
+        <ion-button expand="block" fill="clear" shape="round">
+          Viajar
+        </ion-button>
+      </ion-item>
+
 </ion-card>
 
 
+
+<!---------------------- botones de abajo ---------------------------->
+
 <ion-tabs>
   <ion-tab-bar slot="bottom" color="dark">
-<!-- 
-botones de abajo -->
-
 
     <ion-tab-button tab="speakers" routerLink="/home">
       <ion-icon name="home"></ion-icon>

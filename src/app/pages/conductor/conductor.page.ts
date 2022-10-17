@@ -25,6 +25,7 @@ export class ConductorPage {
     private activatedRouter: ActivatedRoute,
     private menu: MenuController,
     private storage: Storage,) { }
+    
 
   ngOnInit() {
     this.vernombre();
