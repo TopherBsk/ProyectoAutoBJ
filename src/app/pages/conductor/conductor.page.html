@@ -17,9 +17,6 @@
       <h3 class="animate__animated animate__backInLeft">Crea un viaje</h3>
     </ion-text>
 
-
-<!--------------------Tabla para crear viaje------------------------------------------------------------------------------>
-
     <ion-item>
       <ion-label position="floating">Pon un precio</ion-label>
       <ion-input type="number" name="precio" [(ngModel)]="viajes.precio" placeholder="">$</ion-input>
@@ -51,12 +48,12 @@
         </ion-select>
       </ion-item>
     </ion-list>
-
     <ion-item>
       <ion-icon name="id-card-outline"></ion-icon>
       <ion-label></ion-label>
       <ion-input type="text" name="patente" [(ngModel)]="viajes.patente" placeholder="Ingrese su patente"></ion-input>
     </ion-item>
+<<<<<<< HEAD
 
 
 
@@ -75,25 +72,41 @@
     <ion-tab-bar slot="bottom" color="dark">
       <!-- 
 botones de abajo -->
+=======
+    <ion-button expand="full" class="ion-margin-top" color="primary" type="submit" [disabled]="frmCrear.invalid">
+      Crear
+    </ion-button>
+  </form>
+>>>>>>> 01a766c31b634bb9ee81965df88b7593de691058
 
 
-      <ion-tab-button tab="speakers" routerLink="/home">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Inicio</ion-label>
-      </ion-tab-button>
+<!---------------------- botones de abajo ---------------------------->
 
-      <ion-tab-button tab="map" routerLink="/viaje">
-        <ion-icon name="map"></ion-icon>
-        <ion-label>Viaje</ion-label>
-      </ion-tab-button>
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="dark">
+
+    <ion-tab-button tab="speakers" routerLink="/home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map" routerLink="/viaje">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>Viaje</ion-label>
+    </ion-tab-button>
 
 
-      <ion-tab-button tab="schedule" routerLink="/conductor">
-        <ion-icon name="car-sport-outline"></ion-icon>
-        <ion-label>Conductor</ion-label>
-      </ion-tab-button>
+    <ion-tab-button tab="schedule" routerLink="/conductor">
+      <ion-icon name="car-sport-outline"></ion-icon>
+      <ion-label>Conductor</ion-label>
+    </ion-tab-button>
 
+<<<<<<< HEAD
 
     </ion-tab-bar>
   </ion-tabs>
+=======
+  </ion-tab-bar>
+</ion-tabs>
+>>>>>>> 01a766c31b634bb9ee81965df88b7593de691058
 </ion-content>

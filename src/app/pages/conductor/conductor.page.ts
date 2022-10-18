@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
@@ -15,7 +15,7 @@ export class ConductorPage {
   username: string;
   
   viajes:Viajes={
-  precio: 0,
+  precio: 1000,
   ubicacion: '',
   destino:'',
   patente: '',
