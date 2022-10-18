@@ -3,16 +3,21 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AutorizarGuard } from './guards/autorizar.guard';
 
 const routes: Routes = [
+
   {
     path: '',
     redirectTo: 'loginpage',
     pathMatch: 'full'
   },
+
   {
     path: 'home',
+    
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
     canActivate:[AutorizarGuard]
   },
+
+
   {
     path: 'loginpage',
     loadChildren: () => import('./pages/loginpage/loginpage.module').then( m => m.LoginpagePageModule)

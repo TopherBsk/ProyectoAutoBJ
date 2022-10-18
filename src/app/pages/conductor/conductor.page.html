@@ -38,6 +38,7 @@
       </ion-item>
     </ion-list>
 
+    
     <ion-list>
       <ion-item>
         <ion-label>¿Dónde quieres ir?</ion-label>
@@ -58,10 +59,17 @@
     </ion-item>
 
 
-    <ion-button expand="full" class="ion-margin-top" color="primary" type="submit" [disabled]="frmCrear.invalid">
+
+    <ion-button (click)="guardar()" expand="full" class="ion-margin-top" color="primary" type="submit" [disabled]="frmCrear.invalid">
       Crear
     </ion-button>
-</form>
+
+
+
+  </form>
+
+  
+
 
   <ion-tabs>
     <ion-tab-bar slot="bottom" color="dark">
@@ -84,6 +92,7 @@ botones de abajo -->
         <ion-icon name="car-sport-outline"></ion-icon>
         <ion-label>Conductor</ion-label>
       </ion-tab-button>
+
 
     </ion-tab-bar>
   </ion-tabs>
