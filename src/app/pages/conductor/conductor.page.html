@@ -25,7 +25,8 @@
     <ion-list>
       <ion-item>
         <ion-label>¿Dónde te encuentras?</ion-label>
-        <ion-select name="ubicacion" [(ngModel)]="viajes.ubicacion" placeholder="Comuna" okText="Selecciona" cancelText="Cancelar">
+        <ion-select name="ubicacion" [(ngModel)]="viajes.ubicacion" placeholder="Comuna" okText="Selecciona"
+          cancelText="Cancelar">
           <ion-select-option value="Concepcion">Concepcion</ion-select-option>
           <ion-select-option value="Hualpen">Hualpen</ion-select-option>
           <ion-select-option value="Talcahuano">Talcahuano</ion-select-option>
@@ -35,11 +36,12 @@
       </ion-item>
     </ion-list>
 
-    
+
     <ion-list>
       <ion-item>
         <ion-label>¿Dónde quieres ir?</ion-label>
-        <ion-select name="destino" [(ngModel)]="viajes.destino" placeholder="Comuna" okText="Selecciona" cancelText="Cancelar">
+        <ion-select name="destino" [(ngModel)]="viajes.destino" placeholder="Comuna" okText="Selecciona"
+          cancelText="Cancelar">
           <ion-select-option value="Concepcion">Concepcion</ion-select-option>
           <ion-select-option value="Hualpen">Hualpen</ion-select-option>
           <ion-select-option value="Talcahuano">Talcahuano</ion-select-option>
@@ -53,7 +55,7 @@
       <ion-label></ion-label>
       <ion-input type="text" name="patente" [(ngModel)]="viajes.patente" placeholder="Ingrese su patente"></ion-input>
     </ion-item>
-<<<<<<< HEAD
+
 
 
 
@@ -66,18 +68,6 @@
   </form>
 
   
-
-
-  <ion-tabs>
-    <ion-tab-bar slot="bottom" color="dark">
-      <!-- 
-botones de abajo -->
-=======
-    <ion-button expand="full" class="ion-margin-top" color="primary" type="submit" [disabled]="frmCrear.invalid">
-      Crear
-    </ion-button>
-  </form>
->>>>>>> 01a766c31b634bb9ee81965df88b7593de691058
 
 
 <!---------------------- botones de abajo ---------------------------->
@@ -101,12 +91,7 @@ botones de abajo -->
       <ion-label>Conductor</ion-label>
     </ion-tab-button>
 
-<<<<<<< HEAD
-
     </ion-tab-bar>
   </ion-tabs>
-=======
-  </ion-tab-bar>
-</ion-tabs>
->>>>>>> 01a766c31b634bb9ee81965df88b7593de691058
+
 </ion-content>
