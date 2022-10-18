@@ -14,8 +14,6 @@ export class ViajePage {
 
   username: string;
 
-
-
   // seacherViaje:any;
   // viaje: string;
 
