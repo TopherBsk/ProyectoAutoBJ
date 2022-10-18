@@ -33,6 +33,5 @@ export class ViajePage {
       this.items = Array(3);
       event.target.complete();
     }, 1500);
-    
   }
 }
