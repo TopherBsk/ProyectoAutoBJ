@@ -16,8 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
     canActivate:[AutorizarGuard]
   },
-
-
   {
     path: 'loginpage',
     loadChildren: () => import('./pages/loginpage/loginpage.module').then( m => m.LoginpagePageModule)
@@ -38,6 +36,15 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'validar-usuario',
+    loadChildren: () => import('./pages/validar-usuario/validar-usuario.module').then( m => m.ValidarUsuarioPageModule)
+  },
+  {
+    path: 'newcontra',
+    loadChildren: () => import('./pages/newcontra/newcontra.module').then( m => m.NewcontraPageModule)
+  },
+
 ];
 
 @NgModule({

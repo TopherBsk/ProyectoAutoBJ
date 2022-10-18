@@ -43,7 +43,8 @@ export class ConductorPage {
   async guardar() {
     let existe = await this.storage.get(this.viajes.patente);
 
-    if (existe == null) {
+    if (existe == null) 
+    {
       await this.storage.set(this.viajes.patente, this.viajes);
       console.log("Viaje fue creado");
       this.router.navigate(['/viaje']);

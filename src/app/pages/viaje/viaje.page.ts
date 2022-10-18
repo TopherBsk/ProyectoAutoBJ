@@ -14,7 +14,12 @@ export class ViajePage {
 
   username: string;
 
-
+  viajes:{
+    precio: 1000,
+    ubicacion: '',
+    destino:'',
+    patente: '',
+    }
 
   // seacherViaje:any;
   // viaje: string;
