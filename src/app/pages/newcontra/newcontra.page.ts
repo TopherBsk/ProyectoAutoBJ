@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
+import { Usuario } from 'src/app/interfaces/usuario';
+
 
 @Component({
   selector: 'app-newcontra',
@@ -7,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewcontraPage implements OnInit {
 
-  constructor() { }
+  
+  constructor(private storage:Storage,private router:Router) { }
 
   ngOnInit() {
   }
