@@ -6,15 +6,14 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'loginpage',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
 
   {
     path: 'home',
-    
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
-    
+    canActivate:[AutorizarGuard]
   },
   {
     path: 'loginpage',
@@ -27,6 +26,7 @@ const routes: Routes = [
   {
     path: 'viaje',
     loadChildren: () => import('./pages/viaje/viaje.module').then( m => m.ViajePageModule),
+    
   },
   {
     path: 'conductor',
@@ -41,7 +41,6 @@ const routes: Routes = [
   {
     path: 'validar-usuario',
     loadChildren: () => import('./pages/validar-usuario/validar-usuario.module').then( m => m.ValidarUsuarioPageModule),
-   
   },
   {
     path: 'newcontra',

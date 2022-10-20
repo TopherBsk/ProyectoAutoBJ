@@ -1,23 +1,31 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 import { Observable } from 'rxjs';
-import { NavController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutorizarGuard implements CanActivate {
 
-  constructor(public navCtrl:NavController){}
+  constructor(private storage:Storage, private router:Router){
+
+  }
+
+  async autorizar()
+  {
+    let usr=await this.storage.get('sesion')
+    if(usr!=null){
+    return true;
+  }else{
+    this.router.navigate(['/loginpage']);        
+    return false;
+  }}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(localStorage.getItem('ingresado')){
-        return true;
-      }else{
-        this.navCtrl.navigateRoot('loginpage');        
-        return false;
-      }
+    return this.autorizar();
   }
   
 }
