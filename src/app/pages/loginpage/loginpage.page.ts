@@ -23,8 +23,9 @@ export class LoginpagePage implements OnInit {
 
   onSubmit() {
     console.log("Login");
-    this.validarusuario();
     this.validarpassword();
+    this.validarusuario();
+    
   }
 
   async validarusuario() {
@@ -42,7 +43,7 @@ export class LoginpagePage implements OnInit {
     let pass = await this.storage.get(this.usuario.password);
     if (pass != null) {
       console.log(pass);
-      this.storage.set('sesion1', this.usuario.password);
+      this.storage.set('sesion', this.usuario.password);
       this.router.navigate(['/home']);
     }
     else {
