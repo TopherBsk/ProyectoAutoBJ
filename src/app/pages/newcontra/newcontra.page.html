@@ -1,9 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>newcontra</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/validar-usuario"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Restaurar Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding" >
+  <ion-text color="primary">
+    <h3>Ingresa nueva contraseña</h3>
+  </ion-text>
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input required type="password" name="user"  ></ion-input>
+  </ion-item>
 
-</ion-content>
+  <br>
+  <ion-text color="primary" class="ion-text-center ion-margin-top" 
+  routerLink="/loginpage">
+    <p>Confirmar</p>
+  </ion-text>

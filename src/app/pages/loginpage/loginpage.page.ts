@@ -24,7 +24,7 @@ export class LoginpagePage implements OnInit {
   onSubmit() {
     console.log("Login");
     this.validarusuario();
-    //this.validarpassword();
+    this.validarpassword();
   }
 
   async validarusuario() {
@@ -38,6 +38,16 @@ export class LoginpagePage implements OnInit {
       console.log("Usuario incorrecto");
     }
   }
-  
+  async validarpassword() {
+    let pass = await this.storage.get(this.usuario.password);
+    if (pass != null) {
+      console.log(pass);
+      this.storage.set('sesion1', this.usuario.password);
+      this.router.navigate(['/home']);
+    }
+    else {
+      console.log("Password incorrecto");
+    }
+  }
 
 }

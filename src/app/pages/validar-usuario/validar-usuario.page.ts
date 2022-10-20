@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { Usuario } from 'src/app/interfaces/usuario';
 
 
 @Component({
@@ -9,7 +10,6 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./validar-usuario.page.scss'],
 })
 export class ValidarUsuarioPage implements OnInit {
-
 
 
 
