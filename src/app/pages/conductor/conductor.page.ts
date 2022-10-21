@@ -10,7 +10,7 @@ import { Viajes } from '../../interfaces/viajes';
   templateUrl: './conductor.page.html',
   styleUrls: ['./conductor.page.scss'],
 })
-export class ConductorPage {
+export class ConductorPage implements OnInit {
 
   username: string;
   
@@ -51,6 +51,16 @@ export class ConductorPage {
     }
     else {
       console.log("Primero complete su viaje")
+    }
+  }
+  async mirarviaje() {
+    let usr = await this.storage.get(this.viajes.destino);
+    if (usr != null) {
+      console.log(usr);
+      this.storage.set('viajee', this.viajes.destino);
+    }
+    else {
+      console.log("quedo la caga");
     }
   }
 }
