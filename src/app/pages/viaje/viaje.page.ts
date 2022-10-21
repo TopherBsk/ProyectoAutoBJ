@@ -1,25 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { Viajes } from '../../interfaces/viajes';
 
 @Component({
   selector: 'app-viaje',
   templateUrl: './viaje.page.html',
   styleUrls: ['./viaje.page.scss'],
 })
-export class ViajePage {
+export class ViajePage implements OnInit{
 
   items: any[]=[];
 
   username: string;
 
-  viajes:{
-    precio: 1000,
-    ubicacion: '',
+  viajes:Viajes={
+    precio:1000,
+    ubicacion:'',
     destino:'',
-    patente: '',
-    }
+    patente:'',
+  }
+
+    
 
   // seacherViaje:any;
   // viaje: string;
@@ -29,6 +32,31 @@ export class ViajePage {
     private menu: MenuController,
     private storage: Storage,) { }
 
+    async verviaje() {
+      this.viajes.precio = await this.storage.get('viajee');
+      this.viajes.destino = await this.storage.get('viajee');
+    }
+  onSubmit(){
+    this.verviaje();
+
+
+  }
+  set(key:string,data:Viajes){
+    try{
+      localStorage.setItem(key,JSON.stringify(data));
+    }catch(Viajes){
+      console.log(Viajes);
+      
+    }
+  }
+  get(key:string){
+    try{
+      return JSON.parse(localStorage.getItem(key));
+    }catch(Viajes){
+      console.log(Viajes);
+      
+    }
+  }
   ngOnInit() {
     this.vernombre();
   }

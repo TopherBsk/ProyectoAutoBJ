@@ -53,4 +53,14 @@ export class ConductorPage {
       console.log("Primero complete su viaje")
     }
   }
+  async mirarviaje() {
+    let usr = await this.storage.get(this.viajes.destino);
+    if (usr != null) {
+      console.log(usr);
+      this.storage.set('viajee', this.viajes.destino);
+    }
+    else {
+      console.log("quedo la caga");
+    }
+  }
 }
