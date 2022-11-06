@@ -10,65 +10,54 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
 <!--cargar pagina------------------------------------------------------------------------------>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-  
-  <!-------Buscador de pagina------------------------------------------------------------------------------>
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
 
-  <ion-searchbar ></ion-searchbar>
+<!-------Buscador de pagina------------------------------------------------------------------------------>
 
-  <!-- <ion-searchbar placeholder="Buscar" animated (ionChange)="searchCustomer ($event)" ></ion-searchbar> -->
+<ion-searchbar ></ion-searchbar>
 
-  <!-------Viajes disponibles------------------------------------------------------------------------------>
-
+<!-------Viajes disponibles------------------------------------------------------------------------------>
 <ion-list>
 
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="assets/will.jpg" />
-      </ion-thumbnail>
-        <ion-label>{{username}}</ion-label>
-        <ion-label>Viaja: {{viajes}}</ion-label>
-        <ion-label>Precio:</ion-label>
-      <ion-label>{{username}}</ion-label>
-      <ion-label>Viaja:</ion-label>
-      <ion-label>Precio:</ion-label>
-
-
-
-
-
-
+<ion-item>
+  <ion-thumbnail slot="start">
+    <img alt="Silhouette of mountains" src="assets/will.jpg" />
+  </ion-thumbnail>
+    <ion-label>{{username}}</ion-label>
+    <ion-label>Viaja: </ion-label>
+    <ion-label>Precio:</ion-label>
+</ion-item>
+</ion-list>
 
 <!---------------------- botones de abajo ---------------------------->
 
 <ion-tabs>
   <ion-tab-bar slot="bottom" color="dark">
-
+  
     <ion-tab-button tab="speakers" routerLink="/home">
       <ion-icon name="home"></ion-icon>
       <ion-label>Inicio</ion-label>
     </ion-tab-button>
-
+  
     <ion-tab-button tab="map" routerLink="/viaje">
       <ion-icon name="map"></ion-icon>
       <ion-label>Viaje</ion-label>
     </ion-tab-button>
-
-
-    <ion-tab-button tab="schedule" routerLink="/conductor">
-      <ion-icon name="car-sport-outline"></ion-icon>
-      <ion-label>Conductor</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
-
-
-
+      <ion-tab-button tab="schedule" routerLink="/conductor">
+        <ion-icon name="car-sport-outline"></ion-icon>
+        <ion-label>Conductor</ion-label>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+    </ion-tabs>
+  
+</ion-content>
 
 
 
