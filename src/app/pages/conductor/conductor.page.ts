@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { Viajes } from '../../interfaces/viajes';
+import { PickerController } from '@ionic/angular';
+
 
 
 @Component({
@@ -24,7 +26,8 @@ export class ConductorPage implements OnInit {
   constructor(private router: Router,
     private activatedRouter: ActivatedRoute,
     private menu: MenuController,
-    private storage: Storage,) { }
+    private storage: Storage,
+    private pickerCtrl: PickerController,) { }
     
 
   ngOnInit() {
@@ -63,4 +66,6 @@ export class ConductorPage implements OnInit {
       console.log("quedo la caga");
     }
   }
+
+
 }

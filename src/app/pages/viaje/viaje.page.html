@@ -4,6 +4,10 @@
       <ion-tab-button tab="home" routerLink="/cuenta" > 
         <h3>{{username}}</h3>
       </ion-tab-button>
+
+      <ion-buttons slot="start">
+        <ion-back-button mode="ios" defaultHref="home" text="Configuración de Cuenta"></ion-back-button>
+      </ion-buttons>
       
     </ion-text>
     <ion-icon slot="end" name="happy-outline" class="ion-padding" size="large"></ion-icon>
@@ -21,6 +25,9 @@
 <!-------Buscador de pagina------------------------------------------------------------------------------>
 
 <ion-searchbar ></ion-searchbar>
+
+
+
 
 <!-------Viajes disponibles------------------------------------------------------------------------------>
 <ion-list>

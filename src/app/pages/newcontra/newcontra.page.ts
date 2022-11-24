@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { Usuario2} from 'src/app/interfaces/nueva-contra';
-import { Usuario } from 'src/app/interfaces/usuario';
+import { Credenciales } from 'src/app/interfaces/usuario';
 
 
 @Component({

@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AutorizarGuard } from './guards/autorizar.guard';
+import { AutosComponent } from './backend/autos/autos.component';
+import { AjustesComponent } from './backend/ajustes/ajustes.component';
 
 const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+
+  {path: 'autos', component: AutosComponent},
+  {path: 'ajustes', component: AjustesComponent},
 
   {
     path: 'home',

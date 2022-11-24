@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-import { Usuario } from '../../interfaces/usuario';
+import { AuthService } from 'src/app/services/auth.service';
+import { Credenciales } from '../../interfaces/usuario';
 
 
 @Component({
@@ -11,28 +12,44 @@ import { Usuario } from '../../interfaces/usuario';
 })
 export class LoginpagePage implements OnInit {
 
-  usuario:Usuario = {
-    username: '',
-    password: ''
+  Credenciales:Credenciales = {
+    correo: null,
+    password: null,
+    Usuario:null
   };
 
-  constructor(private storage: Storage, private router: Router) { }
+  constructor(private storage:Storage,
+    private router: Router,
+    private auth: AuthService) { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
+
+
+  async onSubmit() {
     console.log("Login");
+    const res= await this.auth.login(this.Credenciales.correo, this.Credenciales.password).catch(error =>{
+      console.log('error');
+      });
+    if (res){
+      console.log('res ->', res);
+    }
     this.validarpassword();
-    this.validarusuario();
+    this.validarcorreo();
+    this.router.navigate(['/home'])
     
   }
 
-  async validarusuario() {
-    let usr = await this.storage.get(this.usuario.username);
+
+
+
+
+  async validarcorreo() {
+    let usr = await this.storage.get(this.Credenciales.correo);
     if (usr != null) {
       console.log(usr);
-      this.storage.set('sesion', this.usuario.username);
+      this.storage.set('sesion', this.Credenciales.correo);
       this.router.navigate(['/home']);
     }
     else {
@@ -40,10 +57,10 @@ export class LoginpagePage implements OnInit {
     }
   }
   async validarpassword() {
-    let pass = await this.storage.get(this.usuario.password);
+    let pass = await this.storage.get(this.Credenciales.password);
     if (pass != null) {
       console.log(pass);
-      this.storage.set('sesion', this.usuario.password);
+      this.storage.set('sesion', this.Credenciales.password);
       this.router.navigate(['/home']);
     }
     else {

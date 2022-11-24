@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { FirestoreService } from '../../services/firestore.service';
+import { Credenciales } from '../../interfaces/usuario';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +19,7 @@ export class HomePage {
     private activatedRouter: ActivatedRoute,
     private menu: MenuController,
     private storage:Storage,
+    private firestore:FirestoreService,
   ) {
     this.activatedRouter.queryParams.subscribe(params => {
 
@@ -29,6 +32,11 @@ export class HomePage {
       }
     })
   }
+
+
+
+
+
 
   ngOnInit() {
     this.vernombre();
