@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { Credenciales } from '../../interfaces/usuario';
+import { InteracionService } from '../../services/interacion.service';
 
 
 @Component({
@@ -20,15 +21,15 @@ export class LoginpagePage implements OnInit {
 
   constructor(private storage:Storage,
     private router: Router,
-    private auth: AuthService) { }
+    private auth: AuthService,
+    private interaction: InteracionService) { }
 
   ngOnInit() {
   }
 
 
-
-  async onSubmit() {
-    console.log("Login");
+  async login() {
+    console.log('credenciales->', this.Credenciales);
     const res= await this.auth.login(this.Credenciales.correo, this.Credenciales.password).catch(error =>{
       console.log('error');
       });

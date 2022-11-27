@@ -5,6 +5,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class InteracionService {
+  loading: any;
 
   constructor(public toastController: ToastController,
               public loadingController: LoadingController) { }

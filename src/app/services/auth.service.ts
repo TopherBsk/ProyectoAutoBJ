@@ -18,7 +18,7 @@ import { InteracionService } from './interacion.service';
 export class AuthService {
   public user$:Observable<User>;
 
-  constructor(private authfirebase:AngularFireAuth,private afs: AngularFirestore, private interaction:InteracionService) { 
+  constructor(public afAuth: AngularFireAuth,private afs: AngularFirestore, private interaction:InteracionService) {
     this.user$=this.afAuth.authState.pipe(
       switchMap((user)=>{
         if (user){
@@ -33,7 +33,6 @@ export class AuthService {
     return this.afs.createId();
   }
 
-  
   getCollection<tipo>(path: string) {
     const collection = this.afs.collection<tipo>(path);
     return collection.valueChanges();
@@ -43,35 +42,42 @@ export class AuthService {
     const collection = this.afs.collection(path);
     return collection.doc(id).set(data);
 }
+deleteDoc(path: string, id: string) {
+  const collection = this.afs.collection(path);
+  return collection.doc(id).delete();
+}
 
-async loginGoogle(): Promise<User> {
-  try{
-    const{user}=await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    this.updateUserData(user);
-    return user;
+  async loginGoogle(): Promise<User> {
+    try{
+      const{user}=await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      this.updateUserData(user);
+      return user;
+    }
+    catch(error){console.log('Error->', error)}
   }
-  catch(error){console.log('Error->', error)}
-}
 
-async resetPassword(email:string): Promise<void> { 
-  try{
-    return this.afAuth.sendPasswordResetEmail(email);
+
+  async resetPassword(email:string): Promise<void> { 
+    try{
+      return this.afAuth.sendPasswordResetEmail(email);
+    }
+    catch(error){console.log('Error->', error)
   }
-  catch(error){console.log('Error->', error)
-}
-}
+  }
 
 
-  login(correo:string, password:string){
-    return this.authfirebase.signInWithEmailAndPassword(correo,password)
-    this.updateUserData(user);
+  async login(email: string, password: string): Promise<User> {
+    try {
+      const { user } = await this.afAuth.signInWithEmailAndPassword(email, password);
+      this.updateUserData(user);
       return user;
     }
     catch (error) {
       console.log('Error->', error)
       this.interaction.presentToast('Correo o contraseña invalidos')
+    }
   }
-
+  
   async register(email: string, password: string): Promise<User> {
     try {
       const { user } = await this.afAuth.createUserWithEmailAndPassword(email, password);
@@ -82,6 +88,7 @@ async resetPassword(email:string): Promise<void> {
     this.interaction.presentToast('Correo o contraseña invalidos') }
   }
 
+
   async sendVerifcationEmail(): Promise<void> { 
     try{
       return(await this.afAuth.currentUser).sendEmailVerification();
@@ -89,7 +96,7 @@ async resetPassword(email:string): Promise<void> {
     catch(error){
       console.log('Error->', error)}
   }
-  isEmailVerified(user:User):boolean{
+   isEmailVerified(user:User):boolean{
     return user.emailVerified=== true? true:false;
   }
 
@@ -101,7 +108,6 @@ async resetPassword(email:string): Promise<void> {
       console.log('Error->', error)
     }
   }
-
   private updateUserData(user:User){
     const userRef:AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
     const data:User = {
