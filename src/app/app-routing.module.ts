@@ -7,7 +7,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'Loginpage',
+    redirectTo: 'loginpage',
     pathMatch: 'full'
   },
 
