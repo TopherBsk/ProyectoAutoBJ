@@ -1,45 +1,43 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Login</ion-title>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign in User</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content class="ion-padding">
-  <ion-text color="primary" class="ion-text-center">
-    <h3>Iniciar Sesión</h3>
-  </ion-text>
-  
-  <form #frmLogin="ngForm" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">Correo</ion-label>
-      <ion-input [(ngModel)]="Credenciales.correo" ></ion-input>
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
     </ion-item>
-
-
-    <ion-item>
+    <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input [(ngModel)]="Credenciales.password" ></ion-input>
+      <ion-input type="password" #password required></ion-input>
     </ion-item>
-
-    <ion-button expand="full" class="ion-margin-top" color="primary" 
-    type="submit" 
-    [disabled]="frmLogin.invalid">
-      Login
-    </ion-button>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          type="submit"
+          (click)="logIn(email, password)"
+          expand="block"
+          >Login</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <span class="divider line one-line">or</span>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          type="submit"
+          color="danger"
+          (click)="authService.GoogleAuth()"
+          expand="block"
+        >
+          Login with Google
+        </ion-button>
+      </ion-col>
+    </ion-row>
   </form>
-
-  
-  <br>
-
-
-
-  <ion-text color="primary" class="ion-text-center ion-margin-top" 
-  routerLink="/validar-usuario">
-    <p>Se me olvido la Contraseña</p>
-  </ion-text>
-
-  <ion-text color="primary" class="ion-text-center ion-margin-top" 
-  routerLink="/registro">
-    <p>Crear una cuenta</p>
-  </ion-text>
 </ion-content>

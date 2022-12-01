@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AutorizarGuard } from './guards/autorizar.guard';
-import { AutosComponent } from './backend/autos/autos.component';
 import { AjustesComponent } from './backend/ajustes/ajustes.component';
 
 const routes: Routes = [
@@ -12,7 +11,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  {path: 'autos', component: AutosComponent},
   {path: 'ajustes', component: AjustesComponent},
 
   {
@@ -43,15 +41,22 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule),
     
   },
-  {
-    path: 'validar-usuario',
-    loadChildren: () => import('./pages/validar-usuario/validar-usuario.module').then( m => m.ValidarUsuarioPageModule),
-  },
+  
   {
     path: 'newcontra',
     loadChildren: () => import('./pages/newcontra/newcontra.module').then( m => m.NewcontraPageModule),
     
   },
+
+  {
+    path: 'verificar-email',
+    loadChildren: () => import('./pages/verificar-email/verificar-email.module').then( m => m.VerificarEmailPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+
 
 ];
 

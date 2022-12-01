@@ -1,29 +1,25 @@
 <ion-header>
-  
-  <ion-toolbar  color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" defaultHref="/loginpage"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Registro</ion-title>
+    <ion-title>Register User</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content class="ion-padding">
-  <ion-text color="primary" class="ion-text-center">
-    <H4>Crea tu Cuenta</H4>
-  </ion-text>
-  <form #frmCrear="ngForm" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input required type="text" name="username" [(ngModel)]="usuario.username" ></ion-input>
-    </ion-item>
-    <ion-item>
+<ion-content>
+  <form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input required type="password" name="password" [(ngModel)]="usuario.password" ></ion-input>
+      <ion-input type="password" #password required></ion-input>
     </ion-item>
-
-    <ion-button expand="full" class="ion-margin-top" color="primary" type="submit" [disabled]="frmCrear.invalid">
-      Crear
-    </ion-button>
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="signUp(email, password)" expand="block">Register</ion-button>
+      </ion-col>
+    </ion-row>
   </form>
 </ion-content>

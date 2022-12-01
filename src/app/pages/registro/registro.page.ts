@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { AuthService } from '../../services/auth.service';
 import { Credenciales} from 'src/app/interfaces/usuario';
+import { InteracionService } from '../../services/interacion.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -16,7 +19,11 @@ export class RegistroPage implements OnInit {
     Usuario:null,
   };
 
-  constructor(private storage:Storage,private router:Router) { }
+  constructor(private storage:Storage,
+    private router:Router,
+    public authService: AuthService,
+    private interaction:InteracionService,
+    private authSvc:AuthService,) { }
   ngOnInit() {
   }
   onSubmit()
@@ -40,4 +47,16 @@ export class RegistroPage implements OnInit {
     }
   }
 
+
+
+signUp(email, password){
+  this.authService.RegisterUser(email.value, password.value)
+  .then((res) => {
+    // Do something here
+    this.authService.SendVerificationMail()
+    this.router.navigate(['verify-email']);
+  }).catch((error) => {
+    window.alert(error.message)
+  })
+}
 }

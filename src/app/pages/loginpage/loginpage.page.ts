@@ -22,20 +22,26 @@ export class LoginpagePage implements OnInit {
   constructor(private storage:Storage,
     private router: Router,
     private auth: AuthService,
-    private interaction: InteracionService) { }
+    private interaction: InteracionService,
+    public authService: AuthService,
+    private authSvc:AuthService) { }
 
   ngOnInit() {
   }
 
 
   async login() {
+    await this.interaction.presentLoading ('ingresando...')
     console.log('credenciales->', this.Credenciales);
     const res= await this.auth.login(this.Credenciales.correo, this.Credenciales.password).catch(error =>{
       console.log('error');
+      this.interaction.presentLoading('Usuario o contraseña invalido');
       });
     if (res){
       console.log('res ->', res);
+      this.interaction.presentLoading('Ingresado con exito');
     }
+
     this.validarpassword();
     this.validarcorreo();
     this.router.navigate(['/home'])
@@ -68,5 +74,18 @@ export class LoginpagePage implements OnInit {
       console.log("Password incorrecto");
     }
   }
-
+  
+  logIn(email, password) {
+    this.authService.SignIn(email.value, password.value)
+      .then((res) => {
+        if(this.authService.isEmailVerified) {
+          this.router.navigate(['dashboard']);          
+        } else {
+          window.alert('Email is not verified')
+          return false;
+        }
+      }).catch((error) => {
+        window.alert(error.message)
+      })
+  }
 }
