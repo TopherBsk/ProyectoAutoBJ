@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { NewcontraPage } from './newcontra.page';
+import { PasswordResetPage } from './password-reset.page';
 
-describe('NewcontraPage', () => {
-  let component: NewcontraPage;
-  let fixture: ComponentFixture<NewcontraPage>;
+describe('PasswordResetPage', () => {
+  let component: PasswordResetPage;
+  let fixture: ComponentFixture<PasswordResetPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewcontraPage ],
+      declarations: [ PasswordResetPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NewcontraPage);
+    fixture = TestBed.createComponent(PasswordResetPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

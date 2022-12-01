@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/shared/authentication-service';
 import { Credenciales } from '../../interfaces/usuario';
-import { InteracionService } from '../../services/interacion.service';
+
 
 
 @Component({
@@ -21,36 +21,10 @@ export class LoginpagePage implements OnInit {
 
   constructor(private storage:Storage,
     private router: Router,
-    private auth: AuthService,
-    private interaction: InteracionService,
-    public authService: AuthService,
-    private authSvc:AuthService) { }
+    public authService: AuthenticationService) { }
 
   ngOnInit() {
   }
-
-
-  async login() {
-    await this.interaction.presentLoading ('ingresando...')
-    console.log('credenciales->', this.Credenciales);
-    const res= await this.auth.login(this.Credenciales.correo, this.Credenciales.password).catch(error =>{
-      console.log('error');
-      this.interaction.presentLoading('Usuario o contraseña invalido');
-      });
-    if (res){
-      console.log('res ->', res);
-      this.interaction.presentLoading('Ingresado con exito');
-    }
-
-    this.validarpassword();
-    this.validarcorreo();
-    this.router.navigate(['/home'])
-    
-  }
-
-
-
-
 
   async validarcorreo() {
     let usr = await this.storage.get(this.Credenciales.correo);
@@ -79,7 +53,7 @@ export class LoginpagePage implements OnInit {
     this.authService.SignIn(email.value, password.value)
       .then((res) => {
         if(this.authService.isEmailVerified) {
-          this.router.navigate(['dashboard']);          
+          this.router.navigate(['/home']);          
         } else {
           window.alert('Email is not verified')
           return false;

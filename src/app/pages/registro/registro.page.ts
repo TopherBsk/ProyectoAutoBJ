@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-import { AuthService } from '../../services/auth.service';
+import { AuthenticationService } from 'src/app/shared/authentication-service';
 import { Credenciales} from 'src/app/interfaces/usuario';
-import { InteracionService } from '../../services/interacion.service';
 
 
 @Component({
@@ -21,9 +20,7 @@ export class RegistroPage implements OnInit {
 
   constructor(private storage:Storage,
     private router:Router,
-    public authService: AuthService,
-    private interaction:InteracionService,
-    private authSvc:AuthService,) { }
+    public authService: AuthenticationService) { }
   ngOnInit() {
   }
   onSubmit()
