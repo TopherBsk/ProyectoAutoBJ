@@ -4,10 +4,12 @@
       <ion-tab-button tab="cuenta" routerLink="/cuenta">
         <h3>{{username}}</h3>
       </ion-tab-button>
-
     </ion-text>
     <ion-icon slot="end" name="happy-outline" class="ion-padding" size="large"></ion-icon>
-
+    
+    <ion-button (click)="abrirMenu()">
+      <ion-icon slot="start" name="menu"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 

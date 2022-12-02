@@ -36,6 +36,11 @@ export class HomePage {
 
 
 
+abrirMenu(){
+  this.menu.enable(true, 'first');
+  this.menu.open('first');
+}
+
 
 
   ngOnInit() {
