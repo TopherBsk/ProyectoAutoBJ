@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
-  selector: 'app-viaje',
+  selector: 'app-viaje', 
   templateUrl: './viaje.page.html',
   styleUrls: ['./viaje.page.scss'],
 })

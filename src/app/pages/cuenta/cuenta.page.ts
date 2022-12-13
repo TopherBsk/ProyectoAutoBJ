@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { AuthenticationService } from 'src/app/shared/authentication-service';
+
 
 @Component({
   selector: 'app-cuenta',
@@ -15,7 +17,8 @@ export class CuentaPage  {
   constructor(private router: Router,
     private activatedRouter: ActivatedRoute,
     private menu: MenuController,
-    private storage:Storage,) {}
+    private storage:Storage,
+    public authService: AuthenticationService,) {}
 
 
     cerrarSesion(){
