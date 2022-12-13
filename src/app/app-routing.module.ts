@@ -7,16 +7,14 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'loginpage',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
-
-  {path: 'ajustes', component: AjustesComponent},
 
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
-    
+    canActivate:[AutorizarGuard]
   },
   {
     path: 'loginpage',
@@ -25,16 +23,17 @@ const routes: Routes = [
   {
     path: 'cuenta',
     loadChildren: () => import('./pages/cuenta/cuenta.module').then( m => m.CuentaPageModule),
+
   },
   {
     path: 'viaje',
     loadChildren: () => import('./pages/viaje/viaje.module').then( m => m.ViajePageModule),
+
     
   },
   {
     path: 'conductor',
     loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule),
-    
   },
   {
     path: 'registro',

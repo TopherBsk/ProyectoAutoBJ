@@ -50,6 +50,7 @@
         color="danger"
         (click)="authService.GoogleAuth()"
         expand="block"
+        [routerLink]="['/home']"
       >
         Login with Google
       </ion-button>

@@ -4,8 +4,6 @@ import { Storage } from '@ionic/storage-angular';
 import { AuthenticationService } from 'src/app/shared/authentication-service';
 import { Credenciales } from '../../interfaces/usuario';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './loginpage.page.html',
