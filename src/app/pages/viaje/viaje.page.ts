@@ -45,7 +45,10 @@ async verviaje(){
     }, 1500);
   }
 
-
+  abrirMenu(){
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
 // busqueda ---------------------------------------------------------------------
   // searchCustomer(event){
   //   const text = event.target.value;
