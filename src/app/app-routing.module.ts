@@ -7,14 +7,14 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'loginpage',
     pathMatch: 'full'
   },
 
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
-    canActivate:[AutorizarGuard]
+    //canActivate:[AutorizarGuard]
   },
   {
     path: 'loginpage',
