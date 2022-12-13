@@ -31,7 +31,7 @@
     "@ionic/storage-angular": "^3.0.6",
     "animate.css": "^4.1.1",
     "cordova-plugin-firebase-authentication": "^7.0.1",
-    "firebase": "^9.14.0",
+    "firebase": "^9.15.0",
     "ionicons": "^6.0.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
