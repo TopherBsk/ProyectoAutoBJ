@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AutorizarGuard } from './guards/autorizar.guard';
-import { AjustesComponent } from './backend/ajustes/ajustes.component';
 
 const routes: Routes = [
 
