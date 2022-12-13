@@ -67,5 +67,8 @@ export class ConductorPage implements OnInit {
     }
   }
 
-
+  abrirMenu(){
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
 }
