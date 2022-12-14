@@ -6,6 +6,8 @@ import { Observable, of } from 'rxjs';
 
 import * as auth from 'firebase/auth';
 import { Router } from '@angular/router';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -78,7 +80,7 @@ export class AuthService {
       .signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['home']);
         });
         this.SetUserData(result.user);
       })
